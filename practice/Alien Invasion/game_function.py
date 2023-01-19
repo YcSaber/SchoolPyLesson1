@@ -14,16 +14,18 @@ def check_keydown_events(event,ai_settings,screen,ship,bullets):
         ship.moving_down = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings,screen,ship,bullets)
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 def check_keyup_events(event,ship):
     """响应松开"""
     if event.key == pygame.K_RIGHT:
         ship.moving_right = False
-    if event.key == pygame.K_LEFT:
+    elif event.key == pygame.K_LEFT:
         ship.moving_left = False
-    if event.key == pygame.K_UP:
+    elif event.key == pygame.K_UP:
         ship.moving_up = False
-    if event.key == pygame.K_DOWN:
+    elif event.key == pygame.K_DOWN:
         ship.moving_down = False
 def check_events(ai_settings,screen,ship,bullets):
     for event in pygame.event.get():
@@ -34,12 +36,13 @@ def check_events(ai_settings,screen,ship,bullets):
             elif event.type == pygame.KEYUP:
                 check_keyup_events(event,ship)
 
-def update_screen(bg_color,screen,ship,bullets):
+def update_screen(bg_color,screen,ship,alien,bullets):
     # 每次循环都绘制屏幕
     screen.fill(bg_color)
     for bullet in bullets.sprites():
         bullet.draw_bullet()
     ship.blitme()
+    alien.blitme()
     # 让最近绘制的屏幕可见
     pygame.display.flip()
 def fire_bullet(ai_settings,screen,ship,bullets):
