@@ -32,6 +32,9 @@ class Ship():
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
             self.center1 += self.ai_settings.ship_speed_factor
         self.rect.centery = self.center1
+    def center_ship(self):
+        self.center = self.screen_rect.centerx
+        self.rect.bottom = self.screen_rect.bottom
     def blitme(self):
         self.screen.blit(self.image,self.rect)
     
