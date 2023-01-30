@@ -114,19 +114,20 @@ def change_fleet_direction(ai_settings,aliens):
 
 def ship_hit(ai_settings,stats,screen,ship,aliens,bullets):
     """响应被外星人撞到的飞船"""
-    # 将ship_left-1
-    stats.ships_left -= 1
-    
-    # 清空外星人和子弹列表
-    aliens.empty()
-    bullets.empty()
-    
-    # 创建一群新的外星人,并将飞船放在屏幕底端中央
-    create_fleet(ai_settings,screen,ship,aliens)
-    ship.center_ship()
-    
-    # 暂停
-    sleep(1)
+    if stats.ships_left > 0:
+        # 将ship_left-1
+        stats.ships_left -= 1
+        
+        # 清空外星人和子弹列表
+        aliens.empty()
+        bullets.empty()
+        
+        # 创建一群新的外星人,并将飞船放在屏幕底端中央
+        create_fleet(ai_settings,screen,ship,aliens)
+        ship.center_ship()
+        
+    else:
+        stats.game_active = False
 
 def update_aliens(ai_settings,stats,screen,ship,aliens,bullets):
     """更新外星人群众所有外星人的位置"""
@@ -136,6 +137,8 @@ def update_aliens(ai_settings,stats,screen,ship,aliens,bullets):
     # 检测外星人与飞船碰撞
     if pygame.sprite.spritecollideany(ship,aliens):
         ship_hit(ai_settings,stats,screen,ship,aliens,bullets)
+    # 检测外星人是否到达底端
+    check_alien_bottom(ai_settings,stats,screen,ship,aliens,bullets)
 
 def check_bullet_alien_collisions(ai_settings,screen,ship,aliens,bullets):
     """响应子弹和外星人的碰撞"""
@@ -146,3 +149,13 @@ def check_bullet_alien_collisions(ai_settings,screen,ship,aliens,bullets):
     if len(aliens) == 0 :
         bullets.empty()
         create_fleet(ai_settings,screen,ship,aliens)
+
+def check_alien_bottom(ai_settings,stats,screen,ship,aliens,bullets):
+    """检查是否有外星人到达屏幕地段"""
+    screen_rect = screen.get_rect()
+    for alien in aliens.sprites():
+        if alien.rect.bottom >= screen_rect.bottom:
+            # 像飞船被撞倒一样处理
+            ship_hit(ai_settings,stats,screen,ship,aliens,bullets)
+            break
+        
