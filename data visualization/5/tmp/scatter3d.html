@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-gl.min.js"></script>
+
+</head>
+<body>
+    <div id="3d9a177e17f943eaa92507eb3e510154" class="chart-container" style="width:800px; height:400px;"></div>
+    <script>
+        var chart_3d9a177e17f943eaa92507eb3e510154 = echarts.init(
+            document.getElementById('3d9a177e17f943eaa92507eb3e510154'), 'white', {renderer: 'canvas'});
+        var option_3d9a177e17f943eaa92507eb3e510154 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "scatter3D",
+            "data": [
+                [
+                    55.79,
+                    70.47,
+                    150.0
+                ],
+                [
+                    35.0,
+                    70.34,
+                    144.0
+                ],
+                [
+                    42.93,
+                    87.65,
+                    162.0
+                ],
+                [
+                    28.3,
+                    89.8,
+                    129.0
+                ],
+                [
+                    40.56,
+                    103.02,
+                    143.0
+                ],
+                [
+                    33.0,
+                    77.37,
+                    152.0
+                ],
+                [
+                    43.48,
+                    82.48,
+                    175.0
+                ],
+                [
+                    30.38,
+                    75.94,
+                    160.0
+                ],
+                [
+                    40.17,
+                    97.11,
+                    148.0
+                ],
+                [
+                    36.01,
+                    78.42,
+                    125.0
+                ],
+                [
+                    44.22,
+                    88.02,
+                    155.0
+                ],
+                [
+                    38.76,
+                    74.47,
+                    123.0
+                ],
+                [
+                    33.09,
+                    75.98,
+                    147.0
+                ],
+                [
+                    44.81,
+                    58.97,
+                    139.0
+                ],
+                [
+                    31.94,
+                    91.8,
+                    145.0
+                ],
+                [
+                    34.48,
+                    79.81,
+                    158.0
+                ],
+                [
+                    47.23,
+                    56.18,
+                    163.0
+                ],
+                [
+                    45.06,
+                    86.13,
+                    156.0
+                ],
+                [
+                    55.12,
+                    87.3,
+                    127.0
+                ],
+                [
+                    45.58,
+                    88.52,
+                    147.0
+                ]
+            ],
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 100,
+        "inRange": {
+            "color": [
+                "#1710c0",
+                "#0b69f0",
+                "#00fea8",
+                "#00ff0d",
+                "#f5f811",
+                "#f09a09",
+                "#fe0300"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    },
+    "xAxis3D": {
+        "name": "\u6700\u5927\u643a\u6c27\u80fd\u529b",
+        "nameGap": 20,
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "yAxis3D": {
+        "name": "\u4f53\u91cd",
+        "nameGap": 20,
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "zAxis3D": {
+        "name": "\u8fd0\u52a8\u540e\u5fc3\u7387",
+        "nameGap": 20,
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "grid3D": {
+        "boxWidth": 200,
+        "boxHeight": 100,
+        "boxDepth": 80,
+        "viewControl": {
+            "autoRotate": false,
+            "autoRotateSpeed": 10,
+            "rotateSensitivity": 1
+        }
+    },
+    "title": [
+        {
+            "text": "\u6700\u5927\u643a\u6c27\u80fd\u529b,\u4f53\u91cd\u548c\u8fd0\u52a8\u540e\u5fc3\u73873d\u6563\u70b9\u56fe",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_3d9a177e17f943eaa92507eb3e510154.setOption(option_3d9a177e17f943eaa92507eb3e510154);
+    </script>
+</body>
+</html>
